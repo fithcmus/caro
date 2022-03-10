@@ -1,0 +1,130 @@
+body {
+  font: 14px "Century Gothic", Futura, sans-serif;
+  margin: 20px;
+}
+
+ol, ul, li {
+  padding-left: 0;
+  text-align: center;
+}
+
+.board-row:after {
+  clear: both;
+  content: "";
+  display: table;
+}
+
+.status {
+  margin-bottom: 20px;
+  border: dashed 3px #E55D87;
+  padding: 7px;
+  width: 85px;
+  text-align: center;
+}
+
+.square {
+  background: #fff;
+  border: 1px solid #999;
+  float: left;
+  font-size: 24px;
+  font-weight: bold;
+  line-height: 34px;
+  height: 34px;
+  margin-right: -1px;
+  margin-top: -1px;
+  padding: 0;
+  text-align: center;
+  width: 100px;
+  height: 100px;
+}
+
+.square:focus {
+  outline: none;
+}
+
+.kbd-navigation .square:focus {
+  background: #ddd;
+}
+
+.game {
+  display: flex;
+  flex-direction: row;
+}
+
+.game-info {
+  margin-left: 20px;
+}
+
+#btnMove {background-image: linear-gradient(to right, #E55D87 0%, #5FC3E4  51%, #E55D87  100%)}
+#btnMove {
+   margin-bottom: 10px;
+   padding: 10px 10px;
+   text-align: center;
+   transition: 0.5s;
+   background-size: 200% auto;
+   color: white;
+   box-shadow: 0 0 20px #eee;
+   border-radius: 10px;
+   border: none;
+   display: block;
+   width: max-content;
+ }
+
+#btnMove:hover {
+   background-position: right center; /* change the direction of the change here */
+   color: #fff;
+   text-decoration: none;
+ }
+
+.toggle-button{
+  position: relative;
+  display: inline-block;
+  width: 100px;
+  height: 25px;
+ }
+
+ .toggle-button input{
+  opacity: 0;
+  width: 0;
+  height: 0;
+ }
+
+ .slider {
+  border-radius: 10px;
+  background-color: #E55D87;
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+.slider:before {
+  border-radius: 10px;
+  position: absolute;
+  content: "";
+  height: 25px;
+  width: 50px;
+  text-align: center;
+  background-color: white;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+
+input:checked + .slider {
+  background-color: #5FC3E4;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #5FC3E4;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(50px);
+  -ms-transform: translateX(50px);
+  transform: translateX(50px);
+}
